@@ -13,6 +13,7 @@ function_aliases = {}
 aliased_functions = {}
 
 example_functions = {}
+tutorial_functions = {}
 
 examples = {
   'vertexarray_draw': {
@@ -68,6 +69,274 @@ examples = {
   },
 }
 
+tutorials = {
+  'open.gl drawing': {
+    'name': 'open.gl - The Graphics Pipeline',
+    'link': 'http://open.gl/drawing',
+    'commands': ['glBindBuffer', 'glShaderSource', 'glDeleteShader', 'glDetachShader', 'glUseProgram',
+      'glVertexAttribPointer', 'glDrawArrays', 'glGetError', 'glUniform', 'glDrawElements',
+      'glGenBuffers', 'glBufferData', 'glCreateShader', 'glCompileShader', 'glGetShader',
+      'glGetShaderInfoLog', 'glAttachShader', 'glBindFragDataLocation', 'glLinkProgram',
+      'glGetAttribLocation', 'glEnableVertexAttribArray', 'glGenVertexArrays', 'glBindVertexArray',
+      'glGetUniformLocation', 'glVertexAttribPointer'],
+  },
+  'open.gl textures': {
+    'name': 'open.gl - Textures Objects and Parameters',
+    'link': 'http://open.gl/textures',
+    'commands': ['glTexParameter', 'glTexImage2D', 'glBindTexture', 'glActiveTexture', 'glUniform',
+      'glGenerateMipmap', 'glVertexAttribPointer', 'glEnableVertexAttribArray'],
+  },
+  'open.gl transformations': {
+    'name': 'open.gl - Transformations',
+    'link': 'http://open.gl/transformations',
+    'commands': ['glUniform'],
+  },
+  'open.gl depthstencils': {
+    'name': 'open.gl - Depth and Stencil Buffers',
+    'link': 'http://open.gl/depthstencils',
+    'commands': ['glDrawArrays', 'glEnable', 'glClear', 'glStencilFunc', 'glStencilOp', 'glStencilMask', 'glColorMask', 'glDepthMask', 'glGetUniformLocation'],
+  },
+  'open.gl framebuffers': {
+    'name': 'open.gl - Framebuffers',
+    'link': 'http://open.gl/framebuffers',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glCheckFramebufferStatus', 'glReadPixels', 'glViewport', 'glBindFragDataLocation',
+      'glDeleteRenderbuffers', 'glBindTexture', 'glGenFramebuffers', 'glBindFramebuffer',
+      'glDeleteFramebuffers', 'glGenTextures', 'glTexImage2D', 'glTexParameter',
+      'glFramebufferTexture2D', 'glGenRenderbuffers', 'glBindRenderbuffer', 'glRenderbufferStorage',
+      'glFramebufferRenderbuffer', 'glBindVertexArray', 'glEnable', 'glUseProgram', 'glActiveTexture',
+      ],
+  },
+  'open.gl geometry': {
+    'name': 'open.gl - Geometry Shaders',
+    'link': 'http://open.gl/geometry',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glCheckFramebufferStatus', 'glReadPixels', 'glViewport', 'glBindFragDataLocation',
+      'glDeleteRenderbuffers', 'glBindTexture', 'glDrawArrays', 'glCreateProgram', 'glAttachShader',
+      'glLinkProgram', 'glUseProgram', 'glBindBuffer', 'glBufferData', 'glGenVertexArrays',
+      'glBindVertexArray', 'glGetAttribLocation', 'glEnableVertexAttribArray', 'glVertexAttribPointer',
+      'glClearColor', 'glClear', 'glDrawArrays'],
+  },
+  'open.gl feedback': {
+    'name': 'open.gl - Transform Feedback',
+    'link': 'http://open.gl/feedback',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glCreateShader', 'glShaderSource', 'glCompileShader', 'glCreateProgram',
+      'glAttachShader', 'glLinkProgram', 'glTransformFeedbackVaryings', 'glUseProgram',
+      'glGenVertexArrays', 'glBindVertexArray', 'glGenBuffers', 'glBindBuffer', 'glBufferData',
+      'glGetAttribLocation', 'glEnableVertexAttribArray', 'glVertexAttribPointer', 'glGenBuffers',
+      'glBindBuffer', 'glBufferData', 'glEnable', 'glBindBufferBase', 'glBeginTransformFeedback',
+      'glDrawArrays', 'glFlush', 'glGetBufferSubData', 'glGenQueries', 'glBeginQuery',  
+      'glGetQueryObject'],
+  },
+  'songho overview': {
+    'name': 'Songho - OpenGL Overview',
+    'link': 'http://www.songho.ca/opengl/gl_overview.html',
+    'versions': [ 'gl2', 'gl3' ],
+    'commands': ['glColor', 'glVertex', 'glPushAttrib', 'glEnable', 'glBegin', 'glFlush', 'glFinish'],
+  },
+  'songho pipeline': {
+    'name': 'Songho - OpenGL Rendering Pipeline',
+    'link': 'http://www.songho.ca/opengl/gl_pipeline.html',
+    'versions': [ 'gl2', 'gl3' ],
+    'commands': ['glRenderMode', 'glReadPixels', 'glCopyPixels', 'glGet', 'glIsEnabled'],
+  },
+  'songho transformations': {
+    'name': 'Songho - OpenGL Transformation',
+    'link': 'http://www.songho.ca/opengl/gl_transform.html',
+    'versions': [ 'gl2', 'gl3' ],
+    'commands': ['glRotate', 'glTranslate', 'glScale', 'glViewport', 'glDepthRange', 'glMatrixMode',
+      'glOrtho', 'glFrustum', 'glPushMatrix', 'glLoadIdentity', 'glLoadMatrix', 'glLoadTransposeMatrix',
+      'glMultMatrix', 'glMultTransposeMatrix'],
+  },
+  'songho matrices': {
+    'name': 'Songho - OpenGL Matrix Class (C++)',
+    'link': 'http://www.songho.ca/opengl/gl_matrix.html',
+    'versions': [ 'gl2', 'gl3' ],
+    'commands': ['glRotate', 'glTranslate', 'glScale', 'glMultMatrix', 'glFrustum',
+      'glOrtho', 'glLoadIdentity'],
+  },
+  'songho vertex array': {
+    'name': 'Songho - OpenGL Vertex Array',
+    'link': 'http://www.songho.ca/opengl/gl_vertexarray.html',
+    'versions': [ 'gl2', 'gl3' ],
+    'commands': ['glBegin', 'glVertex', 'glDrawArrays', 'glDrawElements', 'glDrawRangeElements',
+      'glEnableClientState', 'glVertexPointer', 'glNormalPointer', 'glColorPointer', 'glIndexPointer',
+      'glTexCoordPointer', 'glEdgeFlagPointer', 'glPolygonMode'],
+  },
+  'songho display lists': {
+    'name': 'Songho - OpenGL Display List',
+    'link': 'http://www.songho.ca/opengl/gl_displaylist.html',
+    'versions': [ 'gl2', 'gl3' ],
+    'commands': ['glFlush', 'glFinish', 'glRenderMode', 'glEnableClientState', 'glVertexPointer',
+      'glIsEnabled', 'glGet', 'glReadPixels', 'glFeedbackBuffer', 'glGenLists', 'glVertex',
+      'glDeleteLists', 'glNewList', 'glEndList', 'glCallList', 'glCallLists', 'glBegin', 'glListBase',
+      'glDrawElements'],
+  },
+  'songho vbo': {
+    'name': 'Songho - OpenGL Vertex Buffer Object (VBO)',
+    'link': 'http://www.songho.ca/opengl/gl_vbo.html',
+    'versions': [ 'gl2', 'gl3' ],
+    'commands': ['glVertexPointer', 'glNormalPointer', 'glTexCoordPointer', 'glGenBuffers',
+      'glBindBuffer', 'glBufferData', 'glBufferSubData', 'glDeleteBuffers', 'glEnableClientState',
+      'glDrawElements', 'glMapBuffer', 'glUnmapBuffer'],
+  },
+  'songho pbo': {
+    'name': 'Songho - OpenGL Pixel Buffer Object (PBO)',
+    'link': 'http://www.songho.ca/opengl/gl_pbo.html',
+    'commands': ['glGenBuffers', 'glBindBuffer', 'glBufferData', 'glMapBuffer', 'glUnmapBuffer',
+      'glBufferData', 'glBindTexture', 'glTexSubImage2D'],
+  },
+  'songho fbo': {
+    'name': 'Songho - OpenGL Frame Buffer Object (FBO)',
+    'link': 'http://www.songho.ca/opengl/gl_fbo.html',
+    'commands': ['glFramebufferTexture2D', 'glFramebufferRenderbuffer', 'glGenFramebuffers',
+      'glDeleteFramebuffers', 'glBindFramebuffer', 'glGenRenderbuffers', 'glDeleteRenderbuffers', 
+      'glBindRenderbuffer', 'glRenderbufferStorage', 'glGetRenderbufferParameter', 
+      'glCheckFramebufferStatus', 'glBlitFramebuffer', 'glTexParameter', 'glTexImage2D',
+      'glGenerateMipmap'],
+  },
+  'opengl-tutorial.org vao': {
+    'name': 'opengl-tutorial.org - Tutorial 2 : The first triangle',
+    'link': 'http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glGenVertexArrays', 'glBindVertexArray', 'glGenBuffers',
+      'glBindBuffer', 'glBufferData', 'glEnableVertexAttribArray', 'glVertexAttribPointer', 
+      'glDrawArrays', 'glCreateShader', 'glShaderSource', 'glCompileShader', 'glGetShader',
+      'glGetShaderInfoLog', 'glAttachShader', 'glLinkProgram', 'glDeleteShader', 'glUseProgram'],
+  },
+  'opengl-tutorial.org matrices': {
+    'name': 'opengl-tutorial.org - Tutorial 3 : Matrices',
+    'link': 'http://www.opengl-tutorial.org/beginners-tutorials/tutorial-3-matrices/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glUniform'],
+  },
+  'opengl-tutorial.org colored cube': {
+    'name': 'opengl-tutorial.org - Tutorial 4 : A Colored Cube',
+    'link': 'http://www.opengl-tutorial.org/beginners-tutorials/tutorial-4-a-colored-cube/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glDrawArrays', 'glGenBuffers', 'glBindBuffer', 'glBufferData',
+      'glEnableVertexAttribArray', 'glVertexAttribPointer', 'glEnable', 'glDepthFunc', 'glClear'],
+  },
+  'opengl-tutorial.org textured cube': {
+    'name': 'opengl-tutorial.org - Tutorial 5 : A Textured Cube',
+    'link': 'http://www.opengl-tutorial.org/beginners-tutorials/tutorial-5-a-textured-cube/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glGenTextures', 'glBindTexture', 'glTexImage2D', 'glTexParameter',
+      'glGenerateMipmap', 'glCompressedTexImage2D', 'glEnable', 'glDepthFunc', 'glClear'],
+  },
+  'opengl-tutorial.org model loading': {
+    'name': 'opengl-tutorial.org - Tutorial 7 : Model loading',
+    'link': 'http://www.opengl-tutorial.org/beginners-tutorials/tutorial-7-model-loading/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glBufferData'],
+  },
+  'opengl-tutorial.org basic shading': {
+    'name': 'opengl-tutorial.org - Tutorial 8 : Basic shading',
+    'link': 'http://www.opengl-tutorial.org/beginners-tutorials/tutorial-8-basic-shading/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glGenBuffers', 'glBindBuffer', 'glBufferData', 'glEnableVertexAttribArray',
+      'glVertexAttribPointer'],
+  },
+  'opengl-tutorial.org transparency': {
+    'name': 'opengl-tutorial.org - Tutorial 10 : Transparency',
+    'link': 'http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-10-transparency/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glEnable', 'glBlendFunc'],
+  },
+  'opengl-tutorial.org normal mapping': {
+    'name': 'opengl-tutorial.org - Tutorial 13 : Normal Mapping',
+    'link': 'http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-13-normal-mapping/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glGenBuffers', 'glBindBuffer', 'glBufferData', 'glGetUniformLocation',
+      'glUniform', 'glActiveTexture', 'glBindTexture', 'glEnableVertexAttribArray',
+      'glVertexAttribPointer', 'glDrawElements'],
+  },
+  'opengl-tutorial.org rtt': {
+    'name': 'opengl-tutorial.org - Tutorial 14 : Render To Texture',
+    'link': 'http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-14-render-to-texture/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glGenFramebuffers', 'glBindFramebuffer', 'glGenTextures', 'glBindTexture',
+      'glTexImage2D', 'glTexParameter', 'glGenRenderbuffers', 'glBindRenderbuffer', 
+      'glRenderbufferStorage', 'glFramebufferRenderbuffer', 'glFramebufferTexture', 'glDrawBuffers',
+      'glCheckFramebufferStatus', 'glViewport', 'glGenVertexArrays', 'glBindVertexArray', 'glGenBuffers',
+      'glBindBuffer', 'glBufferData', 'glGetUniformLocation', 'glTexImage2D', 'glTexImage2DMultisample'],
+  },
+  'opengl-tutorial.org shadow mapping': {
+    'name': 'opengl-tutorial.org - Tutorial 16 : Shadow mapping',
+    'link': 'http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glGenFramebuffers', 'glBindFramebuffer', 'glGenTextures', 'glBindTexture',
+      'glTexImage2D', 'glTexParameter', 'glFramebufferTexture', 'glDrawBuffer',
+      'glCheckFramebufferStatus', 'glUniform'],
+  },
+  'opengl-tutorial.org particles': {
+    'name': 'opengl-tutorial.org - Particles / Instancing',
+    'link': 'http://www.opengl-tutorial.org/intermediate-tutorials/billboards-particles/particles-instancing/',
+    'versions': [ 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glGenBuffers', 'glBindBuffer', 'glBufferData', 'glBufferSubData',
+      'glEnableVertexAttribArray', 'glVertexAttribPointer', 'glDrawArraysInstanced', 
+      'glVertexAttribDivisor'],
+  },
+  'sebastien-nvidia tex compression': {
+    'name': 'S&eacute;bastien Domin&eacute; - Using Texture Compression in OpenGL',
+    'link': 'http://www.oldunreal.com/editing/s3tc/ARB_texture_compression.pdf',
+    'versions': [ 'gl2', 'gl3', 'gl4', 'es2', 'es3' ],
+    'commands': ['glBindTexture', 'glCompressedTexImage2D', 'glGetTexLevelParameter',
+      'glGetCompressedTexImage'],
+  },
+  'nehe ios triangle': {
+    'name': 'nehe.gamedev.net - iOS Lesson 02 - First Triangle',
+    'link': 'http://nehe.gamedev.net/tutorial/ios_lesson_02__first_triangle/50001/',
+    'versions': [ 'es2', 'es3' ],
+    'commands': ['glGenBuffers', 'glBindBuffer', 'glBufferData', 'glUseProgram',
+      'glGetAttribLocation', 'glEnableVertexAttribArray', 'glVertexAttribPointer', 'glDrawArrays'],
+  },
+  'gerdelan hello triangle': {
+    'name': 'Anton Gerdelan - "Hello Triangle" - OpenGL 4 Up and Running',
+    'link': 'http://antongerdelan.net/opengl/hellotriangle.html',
+    'versions': [ 'gl4' ],
+    'commands': ['glEnable', 'glDepthFunc', 'glGenBuffers', 'glBindBuffer', 'glBufferData',
+      'glGenVertexArrays', 'glBindVertexArray', 'glEnableVertexAttribArray', 'glVertexAttribPointer', 
+      'glCreateShader', 'glShaderSource', 'glCompileShader', 'glCreateProgram', 'glAttachShader',
+      'glLinkProgram', 'glClear', 'glUseProgram', 'glBindVertexArray', 'glDrawArrays'],
+  },
+  'gerdelan shaders': {
+    'name': 'Anton Gerdelan - OpenGL 4 Shaders',
+    'link': 'http://antongerdelan.net/opengl/shaders.html',
+    'versions': [ 'gl4' ],
+    'commands': ['glCreateShader', 'glShaderSource', 'glCompileShader', 'glGetShader',
+      'glGetShaderInfoLog', 'glDeleteShader', 'glCreateProgram', 'glAttachShader', 'glLinkProgram', 
+      'glValidateProgram', 'glGetProgram', 'glGetProgramInfoLog', 'glUseProgram', 'glGetActiveAttrib',
+      'glGetAttribLocation', 'glGetUniformLocation', 'glGetActiveUniform', 'glUniform'],
+  },
+  'gerdelan vbo': {
+    'name': 'Anton Gerdelan - Vertex Buffer Objects',
+    'link': 'http://antongerdelan.net/opengl/vertexbuffers.html',
+    'versions': [ 'gl4' ],
+    'commands': ['glGenBuffers', 'glBindBuffer', 'glBufferData', 'glVertexAttribPointer',
+      'glEnableVertexAttribArray', 'glCompileShader', 'glAttachShader', 'glBindAttribLocation', 
+      'glLinkProgram', 'glClear', 'glUseProgram', 'glBindVertexArray', 'glDrawArrays', 'glEnable',
+      'glCullFace', 'glFrontFace', 'glGetActiveUniform', 'glUniform'],
+  },
+  'gerdelan cubemaps': {
+    'name': 'Anton Gerdelan - Cube Maps: Sky Boxes and Environment Mapping',
+    'link': 'http://antongerdelan.net/opengl/cubemaps.html',
+    'versions': [ 'gl4' ],
+    'commands': ['glGenBuffers', 'glBindBuffer', 'glBufferData', 'glVertexAttribPointer',
+      'glEnableVertexAttribArray', 'glGenVertexArrays', 'glBindVertexArray', 'glActiveTexture', 
+      'glGenTextures', 'glTexParameteri', 'glBindTexture', 'glTexImage2D', 'glUseProgram', 
+      'glUniform', 'glDepthMask', 'glDrawArrays'],
+  },
+  'mckesson tut5': {
+    'name': 'Learning Modern 3D Graphics Programming - Chapter 5. Objects in Depth [Vertex Array Objects, Indexed Drawing]',
+    'link': 'http://www.arcsynthesis.org/gltut/Positioning/Tutorial%2005.html',
+    'versions': [ 'gl3', 'gl4' ],
+    'commands': ['glGenVertexArrays', 'glBindVertexArray', 'glDrawElements', 'glBindBuffer',
+      'glEnableVertexAttribArray', 'glVertexAttribPointer'],
+  },
+}
+
 def get_major_versions(all_versions):
   major_versions = []
   for v in all_versions:
@@ -99,7 +368,7 @@ def reverse_version_index(command_list):
   return reversed
 
 def generate_versions():
-  print "Generating version index..."
+  print "Generating OpenGL version index..."
   global version_commands
   global commands_version
   global version_commands_flat
@@ -149,15 +418,43 @@ def generate_versions():
       else:
         example_functions_entry['versions'] = get_major_versions(version_commands.keys())
       example_functions[command].append(example_functions_entry)
-      
-      if not aliased_command in example_functions:
-        example_functions[aliased_command] = []
-      example_functions_entry = {'example': example}
-      if 'versions' in examples[example]:
-        example_functions_entry['versions'] = examples[example]['versions']
+
+      if aliased_command != "" and aliased_command != command:
+        if not aliased_command in example_functions:
+          example_functions[aliased_command] = []
+        example_functions_entry = {'example': example}
+        if 'versions' in examples[example]:
+          example_functions_entry['versions'] = examples[example]['versions']
+        else:
+          example_functions_entry['versions'] = get_major_versions(version_commands.keys())
+        example_functions[aliased_command].append(example_functions_entry)
+
+  for tutorial in tutorials:
+    for command in tutorials[tutorial]['commands']:
+      aliased_command = ""
+      if command in function_aliases:
+        aliased_command = function_aliases[command]
+
+      assert aliased_command in commands_version_flat or command in commands_version_flat # This command was typed in wrong.
+
+      if not command in tutorial_functions:
+        tutorial_functions[command] = []
+      tutorial_functions_entry = {'tutorial': tutorial}
+      if 'versions' in tutorials[tutorial]:
+        tutorial_functions_entry['versions'] = tutorials[tutorial]['versions']
       else:
-        example_functions_entry['versions'] = get_major_versions(version_commands.keys())
-      example_functions[aliased_command].append(example_functions_entry)
+        tutorial_functions_entry['versions'] = get_major_versions(version_commands.keys())
+      tutorial_functions[command].append(tutorial_functions_entry)
+        
+      if aliased_command != "" and aliased_command != command:
+        if not aliased_command in tutorial_functions:
+          tutorial_functions[aliased_command] = []
+        tutorial_functions_entry = {'tutorial': tutorial}
+        if 'versions' in tutorials[tutorial]:
+          tutorial_functions_entry['versions'] = tutorials[tutorial]['versions']
+        else:
+          tutorial_functions_entry['versions'] = get_major_versions(version_commands.keys())
+        tutorial_functions[aliased_command].append(tutorial_functions_entry)
 
   print "Done."
 
@@ -237,7 +534,7 @@ command_categories = OrderedDict([
     "glPolygonOffset", "glSampleCoverage", "glBlendFuncSeparate", "glPointParameter", "glBlendColor", 
     "glBlendEquation", "glStencilOpSeparate", "glStencilFuncSeparate", "glStencilMaskSeparate", 
     "glClampColor", "glBlendEquationSeparate", "glClipControl", "glDepthRangeArray",
-    "glDepthRangeIndexed", "glDisablei", "glScissorArray", "glScissorIndexed", "glViewportArray", 
+    "glDepthRangeIndexed", "glScissorArray", "glScissorIndexed", "glViewportArray", 
     "glViewportIndexed",
   ] ),
   ( "Transform Feedback", [
